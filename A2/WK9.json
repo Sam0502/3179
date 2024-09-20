@@ -1,0 +1,52 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A map of Australia with data imported from cleaned_data.xlsx",
+    "data": {
+        "url": "cleaned_data.json",
+        "format": {
+            "type": "json"
+        }
+    },
+    "layer": [
+        {
+            "data": {
+                "url": "https://raw.githubusercontent.com/vega/vega-datasets/master/data/world-110m.json",
+                "format": {
+                    "type": "topojson",
+                    "feature": "countries"
+                }
+            },
+            "transform": [
+                {
+                    "filter": "datum.id == 36"
+                }
+            ],
+            "mark": {
+                "type": "geoshape",
+                "fill": "lightgray",
+                "stroke": "white"
+            }
+        },
+        {
+            "mark": "circle",
+            "encoding": {
+                "longitude": {
+                    "field": "longitude",
+                    "type": "quantitative"
+                },
+                "latitude": {
+                    "field": "latitude",
+                    "type": "quantitative"
+                },
+                "size": {
+                    "field": "value",
+                    "type": "quantitative"
+                },
+                "color": {
+                    "field": "category",
+                    "type": "nominal"
+                }
+            }
+        }
+    ]
+}
