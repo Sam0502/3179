@@ -1,22 +1,17 @@
 ,NSW,VIC,QLD,SA,WA,TAS,NT,ACT,AUST b
-Trips ('000),,,,,,,,,
+Trips,,,,,,,,,
 Year Ending June 2023,19148.507,13612.882,13767.349,3728.619,4991.385,1735.817,910.176,1798.463,57409.214
 Year Ending June 2024,19702.217,13997.788,14088.524,3936.487,5019.532,1930.864,898.887,1878.965,59382.456
 % of trips to state c,33.179,23.572,23.725,6.629,8.453,3.252,1.514,3.164,100
 % change between year endings,2.892,2.828,2.333,5.575,0.564,11.237,-1.24,4.476,3.437
-Visitor nights ('000),,,,,,,,,
+Visitor nights,,,,,,,,,
 Year Ending June 2023,56975.601,38954.137,51584.053,12115.418,19484.133,6982.919,4366.352,4162.275,194629.286
 Year Ending June 2024,56593.817,37624.729,50109.921,11711.214,20264.794,7291.569,4155.362,4631.974,192460.796
 % of visitors nights to state d,29.405,19.549,26.036,6.085,10.529,3.789,2.159,2.407,100
 % change between year endings,-0.67,-3.413,-2.858,-3.336,4.007,4.42,-4.832,11.285,-1.114
-Regional expenditure ($M),,,,,,,,,
+Regional expenditure,,,,,,,,,
 Year Ending June 2023,19741.04,14177.143,19285.63,4033.838,6139.818,2448.831,1716.761,1571.548,69116.729
 Year Ending June 2024,20333.138,14317.859,18805.645,3944.279,6411.582,2841.067,1726.031,1791.907,70174.115
 % of trips to state d,28.975,20.403,26.799,5.621,9.137,4.049,2.46,2.554,100
 % change between year endings,2.999,0.993,-2.489,-2.22,4.426,16.017,0.54,14.022,1.53
-a. All figures relate to Australian residents aged 15 years and over.,,,,,,,,,
-b. For a list of accommodation types included in commercial accommodation refer to Section 1 of the reference tab,,,,,,,,,
-c. Components may not add to total as visitors may visit more than one state/territory on a trip or may report several purposes for visiting various locations on a trip; total includes visitor nights for which purpose of visit has not been reported; total includes unspecified and offshore visitors that could not be allocated to a state or territory.,,,,,,,,,
-d. Totals may not add due to rounding,,,,,,,,,
-Note: 'Trips' were previously referred to as 'Visitors'.,,,,,,,,,
-Source: Tourism Research Australia: National Visitor Survey,,,,,,,,,
+

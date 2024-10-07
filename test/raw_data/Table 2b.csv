@@ -1,5 +1,5 @@
 ,Holiday,Visiting friends & relatives,Business,Other reason,Total
-Trips ('000),,,,,
+Trips,,,,,
 Year Ending June 2023,31084.708,7916.663,16057.963,3247.345,57409.214
 Year Ending June 2024,31731.271,8251.217,17005.157,3535.446,59382.456
 % of trips by purpose c,53.435,13.895,28.637,5.954,100
@@ -14,10 +14,4 @@ Year Ending June 2023,43168.415,6951.131,16621.769,2375.414,69116.729
 Year Ending June 2024,42701.575,7739.587,17098.072,2634.882,70174.115
 % of trips by purpose d,60.851,11.029,24.365,3.755,100
 % change between year endings,-1.081,11.343,2.866,10.923,1.53
-a. All figures relate to Australian residents aged 15 years and over.,,,,,
-b. For a list of accommodation types included in commercial accommodation refer to Section 1 of the reference tab. For a list of reasons for visit included in each group refer to Section 2 of the reference tab,,,,,
-c. Components may not add to total as visitors may visit more than one state/territory on a trip or may report several purposes for visiting various locations on a trip; total includes visitor nights for which purpose of visit has not been reported; total includes unspecified and offshore visitors that could not be allocated to a state or territory.,,,,,
-d. Totals may not add due to rounding,,,,,
-"e. Main reason used for Trip expenditure, stopover reason used for trips and nights.",,,,,
-Note: 'Trips' were previously referred to as 'Visitors'.,,,,,
-Source: Tourism Research Australia: National Visitor Survey,,,,,
+

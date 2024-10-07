@@ -1,5 +1,5 @@
 ,NSW,VIC,QLD,SA,WA,TAS,NT,ACT,AUST b
-Trips ('000),,,,,,,,,
+Trips,,,,,,,,,
 Year Ending June 2023,36183.207,27820.426,25268.429,7425.306,11183.206,2853.07,1494.975,3106.663,111392.556
 Year Ending June 2024,37138.29,28512.611,25587.98,7573.739,11028.682,3203.377,1394.145,3123.453,113756.617
 % of trips to state b,32.647,25.065,22.494,6.658,9.695,2.816,1.226,2.746,100
@@ -14,8 +14,4 @@ Year Ending June 2023,30214.609,22486.909,28836.331,6693.613,11462.001,3510.235,
 Year Ending June 2024,30674.948,22636.013,28506.441,6682.301,12283.305,3869.106,2581.096,2648.785,109886.835
 % of trips to state c,27.915,20.599,25.942,6.081,11.178,3.521,2.349,2.41,100
 % change between year endings,1.524,0.663,-1.144,-0.169,7.165,10.224,-3.833,10.239,1.47
-a. All figures relate to Australian residents aged 15 years and over.,,,,,,,,,
-b. Components may not add to total as visitors may visit more than one state/territory on a trip or may report several purposes for visiting various locations on a trip; total includes visitor nights for which purpose of visit has not been reported; total includes unspecified and offshore visitors that could not be allocated to a state or territory.,,,,,,,,,
-c. Totals may not add due to rounding,,,,,,,,,
-Note: 'Trips' were previously referred to as 'Visitors'.,,,,,,,,,
-Source: Tourism Research Australia: National Visitor Survey,,,,,,,,,
+
