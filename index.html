@@ -67,7 +67,6 @@
     <div class="chart-container" id="vis-line-chart"></div>
 
     <!-- Container for the bar chart -->
-    <div class="chart-container" id="vis-top-tourism-routes"></div>
 
     <!-- Container for the geographic map -->
     <div class="chart-container" id="vis-map"></div>
@@ -98,208 +97,162 @@
   <script>
     // Updated Line chart specification with legend-based filtering
     const lineChartSpec = {
-      "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-      "description": "An interactive line chart showing the number of passenger trips over time for major city pairs.",
-      "data": {
-        "url": "https://raw.githubusercontent.com/Sam0502/3179/refs/heads/main/test/raw_data/filtered.csv",
-        "format": {"type": "csv"}
-      },
-      "transform": [
-        {"calculate": "datum.City1 + '-' + datum.City2", "as": "city_pair"},
-        {"calculate": "toDate(datum.Year + '-01-01')", "as": "YearDate"},
-        {"filter": {"selection": "legendFilter"}}
-      ],
-      "width": "container",
-      "height": 400,
-      "mark": {
-        "type": "line",
-        "point": true,
-        "tooltip": [
-          {"field": "Year", "type": "temporal", "title": "Year"},
-          {"field": "city_pair", "type": "nominal", "title": "City Pair"},
-          {"field": "Passenger_Trips", "type": "quantitative", "title": "Passenger Trips"}
-        ]
-      },
-      "encoding": {
-        "x": {
-          "field": "YearDate",
-          "type": "temporal",
-          "title": "Year",
-          "axis": {"format": "%Y", "tickCount": "year", "labelAngle": -45}
-        },
-        "y": {
-          "field": "Passenger_Trips",
-          "type": "quantitative",
-          "title": "Number of Passenger Trips",
-          "axis": {"titleColor": "#333", "grid": true}
-        },
-        "color": {
-          "field": "city_pair",
-          "type": "nominal",
-          "title": "City Pair",
-          "scale": {"scheme": "category10"},
-          "legend": {"interactive": true}
-        },
-        "opacity": {
-          "condition": {"selection": "legendFilter", "value": 1},
-          "value": 0.3
-        }
-      },
-      "selection": {
-        "legendFilter": {
-          "type": "multi",
-          "fields": ["city_pair"],
-          "bind": "legend"
-        },
-        "zoom": {"type": "interval", "bind": "scales", "encodings": ["x"]}
-      },
-      "config": {
-        "axis": {"labelFontSize": 12, "titleFontSize": 14},
-        "legend": {"labelFontSize": 12, "titleFontSize": 14},
-        "mark": {
-          "line": {"strokeWidth": 2},
-          "point": {"filled": true, "fill": "white", "strokeWidth": 1}
-        }
-      }
-    };
-    
-    // Updated Bar chart specification with legend-based filtering
-    const barChartSpec = {
-      "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-      "description": "A bar chart to identify the busiest routes based on passenger trips.",
-      "data": {
-        "url": "https://raw.githubusercontent.com/Sam0502/3179/refs/heads/main/test/raw_data/filtered.csv",
-        "format": {"type": "csv"}
-      },
-      "transform": [
-        {"calculate": "datum.City1 + '-' + datum.City2", "as": "city_pair"},
-        {"filter": {"selection": "barLegendFilter"}}
-      ],
-      "mark": "bar",
-      "encoding": {
-        "x": {
-          "field": "city_pair",
-          "type": "nominal",
-          "title": "City Pair",
-          "sort": "-y"
-        },
-        "y": {
-          "field": "Passenger_Trips",
-          "type": "quantitative",
-          "title": "Passenger Trips"
-        },
-        "color": {
-          "field": "city_pair",
-          "type": "nominal",
-          "title": "City Pair",
-          "legend": {"interactive": true}
-        },
-        "tooltip": [
-          {"field": "city_pair", "type": "nominal", "title": "City Pair"},
-          {"field": "Passenger_Trips", "type": "quantitative", "title": "Passenger Trips"}
-        ]
-      },
-      "width": "container",
-      "height": 400,
-      "selection": {
-        "barLegendFilter": {
-          "type": "multi",
-          "fields": ["city_pair"],
-          "bind": "legend"
-        }
-      }
-    };
-    
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "An interactive line chart showing the number of passenger trips over time for major city pairs.",
+  "data": {
+    "url": "https://raw.githubusercontent.com/Sam0502/3179/refs/heads/main/test/new_data/filtered.csv",
+    "format": {"type": "csv"}
+  },
+  "transform": [
+    {"calculate": "datum.City1 + '-' + datum.City2", "as": "city_pair"},
+    {"calculate": "toDate(datum.Year + '-01-01')", "as": "YearDate"},
+    {"filter": {"selection": "legendFilter"}}
+  ],
+  "width": "container",
+  "height": 400,
+  "mark": {
+    "type": "line",
+    "point": true,
+    "tooltip": [
+      {"field": "Year", "type": "temporal", "title": "Year"},
+      {"field": "city_pair", "type": "nominal", "title": "City Pair"},
+      {"field": "Passenger_Trips", "type": "quantitative", "title": "Passenger Trips"}
+    ]
+  },
+  "encoding": {
+    "x": {
+      "field": "YearDate",
+      "type": "temporal",
+      "title": "Year",
+      "axis": {"format": "%Y", "tickCount": "year", "labelAngle": -45}
+    },
+    "y": {
+      "field": "Passenger_Trips",
+      "type": "quantitative",
+      "title": "Number of Passenger Trips",
+      "axis": {"titleColor": "#333", "grid": true}
+    },
+    "color": {
+      "field": "city_pair",
+      "type": "nominal",
+      "title": "City Pair",
+      "scale": {"scheme": "category10"},
+      "legend": {"interactive": true}
+    },
+    "opacity": {
+      "condition": {"selection": "legendFilter", "value": 1},
+      "value": 0.3
+    }
+  },
+  "selection": {
+    "legendFilter": {
+      "type": "multi",
+      "fields": ["city_pair"],
+      "bind": "legend"
+    },
+    "zoom": {"type": "interval", "bind": "scales", "encodings": ["x"]}
+  },
+  "config": {
+    "axis": {"labelFontSize": 12, "titleFontSize": 14, "gridColor": "#e0e0e0"},
+    "legend": {"labelFontSize": 12, "titleFontSize": 14},
+    "mark": {
+      "line": {"strokeWidth": 2},
+      "point": {"filled": true, "fill": "white", "strokeWidth": 1}
+    }
+  }
+};  
     // Geographic map specification remains unchanged
     const mapSpec = {
-      "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-      "width": 900,
-      "height": 600,
-      "projection": {
-        "type": "equalEarth",
-        "center": [133, -28], 
-        "scale": 1500
-      },
-      "layer": [
-        {
-          "data": {
-            "url": "https://vega.github.io/vega-datasets/data/world-110m.json",
-            "format": {"type": "topojson", "feature": "countries"}
-          },
-          "mark": {
-            "type": "geoshape",
-            "fill": "#e0e0e0",
-            "stroke": "#6c2f2f",
-            "strokeWidth": 1.5
-          }
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": "container",   
+    "height": 500, 
+    "autosize": {
+      "type": "fit",       
+      "contains": "padding"
+    },
+    "projection": {
+      "type": "mercator",
+      "center": [133, -28],  
+      "scale": 450          
+    },
+    "layer": [
+      {
+        "data": {
+          "url": "https://vega.github.io/vega-datasets/data/world-110m.json",
+          "format": {"type": "topojson", "feature": "countries"}
         },
-        {
-          "data": {
-            "url": "https://raw.githubusercontent.com/Sam0502/3179/refs/heads/main/test/city_combined.csv",
-            "format": {"type": "csv"}
-          },
-          "layer": [
-            {
-              "mark": {
-                "type": "circle",
-                "opacity": 0.8,
-                "stroke": "#0057e7",
-                "strokeWidth": 1
-              },
-              "encoding": {
-                "longitude": {"field": "longitude", "type": "quantitative"},
-                "latitude": {"field": "latitude", "type": "quantitative"},
-                "size": {
-                  "field": "count",
-                  "type": "quantitative",
-                  "scale": {"range": [50, 200]}
-                },
-                "color": {"value": "#FF6347"},
-                "tooltip": [
-                  {"field": "city", "type": "nominal", "title": "City"},
-                  {"field": "count", "type": "quantitative", "title": "Count"},
-                  {"field": "longitude", "type": "quantitative", "title": "Longitude"},
-                  {"field": "latitude", "type": "quantitative", "title": "Latitude"}
-                ]
-              }
-            },
-            {
-              "transform": [
-                {
-                  "filter": {
-                    "field": "city",
-                    "oneOf": ["SYDNEY", "MELBOURNE", "BRISBANE", "PERTH"]
-                  }
-                }
-              ],
-              "mark": {
-                "type": "text",
-                "align": "left",
-                "dx": 7,
-                "dy": -5,
-                "fontSize": 12,
-                "fontWeight": "bold",
-                "color": "#1a1a1a"
-              },
-              "encoding": {
-                "longitude": {"field": "longitude", "type": "quantitative"},
-                "latitude": {"field": "latitude", "type": "quantitative"},
-                "text": {"field": "city"}
-              }
-            }
-          ]
+        "mark": {
+          "type": "geoshape",
+          "fill": "#65305c1b",
+          "stroke": "#6c2f2f",
+          "strokeWidth": 1.5
         }
-      ],
-      "config": {}
-    };
+      },
+      {
+        "data": {
+          "url": "https://raw.githubusercontent.com/Sam0502/3179/refs/heads/main/test/city_combined.csv",
+          "format": {"type": "csv"}
+        },
+        "layer": [
+          {
+            "mark": {
+              "type": "circle",
+              "opacity": 0.8,
+              "stroke": "#0057e7",
+              "strokeWidth": 1
+            },
+            "encoding": {
+              "longitude": {"field": "longitude", "type": "quantitative"},
+              "latitude": {"field": "latitude", "type": "quantitative"},
+              "size": {
+                "field": "count",
+                "type": "quantitative",
+                "scale": {"range": [70, 400]}
+              },
+              "color": {"value": "#FF6347"},
+              "tooltip": [
+                {"field": "city", "type": "nominal", "title": "City"},
+                {"field": "count", "type": "quantitative", "title": "Count"},
+                {"field": "longitude", "type": "quantitative", "title": "Longitude"},
+                {"field": "latitude", "type": "quantitative", "title": "Latitude"}
+              ]
+            }
+          },
+          {
+            "transform": [
+              {
+                "filter": {
+                  "field": "city",
+                  "oneOf": ["SYDNEY", "MELBOURNE", "BRISBANE", "PERTH"]
+                }
+              }
+            ],
+            "mark": {
+              "type": "text",
+              "align": "left",
+              "dx": 7,
+              "dy": -5,
+              "fontSize": 12,
+              "fontWeight": "bold",
+              "color": "#1a1a1a"
+            },
+            "encoding": {
+              "longitude": {"field": "longitude", "type": "quantitative"},
+              "latitude": {"field": "latitude", "type": "quantitative"},
+              "text": {"field": "city"}
+            }
+          }
+        ]
+      }
+    ],
+    "config": {}
+  }
+  
+
+
     
     // Embed the updated line chart into the container with id 'vis-line-chart'
     vegaEmbed("#vis-line-chart", lineChartSpec, {mode: "vega-lite"}).then(console.log).catch(console.warn);
-
-    // Embed the updated bar chart into the container with id 'vis-top-tourism-routes'
-    vegaEmbed("#vis-top-tourism-routes", barChartSpec).then(console.log).catch(console.warn);
-
-    // Embed the geographic map into the container with id 'vis-map'
     vegaEmbed("#vis-map", mapSpec, {mode: "vega-lite"}).then(console.log).catch(console.warn);
   </script>
 </body>

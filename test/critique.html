@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tourism Data Visualization Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .chart-container {
+      width: 80%;
+      max-width: 800px;
+      margin: 20px;
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <h1>Tourism Data Visualization Dashboard</h1>
+
+  <!-- Container for the first chart -->
+  <div class="chart-container" id="chart1"></div>
+  
+  <!-- Container for the second chart -->
+  <div class="chart-container" id="chart2"></div>
+  
+  <!-- Container for the third chart -->
+  <div class="chart-container" id="chart3"></div>
+
+  <!-- Container for the fourth chart -->
+  <div class="chart-container" id="chart4"></div>
+
+  <script>
+    // First chart: Bar chart showing trips per state
+    vegaEmbed('#chart1', {
+      "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+      "description": "A bar chart showing the number of trips per state.",
+      "data": {
+        "url": "https://raw.githubusercontent.com/Sam0502/3179/refs/heads/main/test/new_data/filtered.csv",
+        "format": {
+          "type": "csv"
+        }
+      },
+      "transform": [
+        {"filter": "datum['Metric'] == 'Trips'"},
+        {"fold": ["NSW", "VIC", "QLD", "SA", "WA", "TAS", "NT", "ACT", "AUST"], "as": ["State", "Value"]}
+      ],
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "State",
+          "type": "nominal",
+          "title": "State"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "title": "Number of Trips"
+        },
+        "color": {
+          "field": "State",
+          "type": "nominal",
+          "legend": null
+        }
+      },
+      "width": "container",
+      "height": 300
+    });
+
+    // Second chart: Line chart showing visitor nights trends over time
+    vegaEmbed('#chart2', {
+      "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+      "description": "A line chart showing visitor nights trends over time.",
+      "data": {
+        "url": "https://raw.githubusercontent.com/Sam0502/3179/refs/heads/main/test/new_data/filtered.csv",
+        "format": {
+          "type": "csv"
+        }
+      },
+      "transform": [
+        {"filter": "datum['Metric'] == 'Visitor nights (\'000)'"},
+        {"fold": ["NSW", "VIC", "QLD", "SA", "WA", "TAS", "NT", "ACT", "AUST"], "as": ["State", "Value"]}
+      ],
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "nominal",
+          "title": "Year"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "title": "Number of Visitor Nights (000's)"
+        },
+        "color": {
+          "field": "State",
+          "type": "nominal",
+          "title": "State"
+        }
+      },
+      "width": "container",
+      "height": 300
+    });
+
+    // Third chart: Pie chart for regional expenditure distribution by state
+    vegaEmbed('#chart3', {
+      "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+      "description": "A pie chart showing regional expenditure distribution by state.",
+      "data": {
+        "url": "https://raw.githubusercontent.com/Sam0502/3179/refs/heads/main/test/new_data/filtered.csv",
+        "format": {
+          "type": "csv"
+        }
+      },
+      "transform": [
+        {"filter": "datum['Metric'] == 'Regional expenditure ($M)'"},
+        {"fold": ["NSW", "VIC", "QLD", "SA", "WA", "TAS", "NT", "ACT", "AUST"], "as": ["State", "Value"]}
+      ],
+      "mark": {
+        "type": "arc",
+        "innerRadius": 50
+      },
+      "encoding": {
+        "theta": {
+          "field": "Value",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "State",
+          "type": "nominal",
+          "title": "State"
+        }
+      },
+      "width": "container",
+      "height": 300
+    });
+
+    // Fourth chart: Map showing city locations with bubbles
+    vegaEmbed('#chart4', {
+      "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+      "description": "A geographic map showing city locations with bubble sizes based on visitor data.",
+      "data": {
+        "url": "https://raw.githubusercontent.com/Sam0502/3179/refs/heads/main/test/city.csv",
+        "format": {
+          "type": "csv"
+        }
+      },
+      "mark": "circle",
+      "projection": {
+        "type": "mercator"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "Longitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "Latitude",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "Visitors",
+          "type": "quantitative",
+          "title": "Number of Visitors"
+        },
+        "color": {
+          "field": "City",
+          "type": "nominal",
+          "title": "City"
+        },
+        "tooltip": [
+          {"field": "City", "type": "nominal"},
+          {"field": "Visitors", "type": "quantitative"}
+        ]
+      },
+      "width": 800,
+      "height": 400
+    });
+  </script>
+</body>
+</html>

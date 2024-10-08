@@ -2,7 +2,7 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "description": "A map of Australia with data imported from cleaned_data.xlsx",
     "data": {
-        "url": "cleaned_data.json",
+        "url": "https://github.com/Sam0502/3179/blob/main/A2/WK9.json",
         "format": {
             "type": "json"
         }

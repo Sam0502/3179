@@ -1,0 +1,76 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 800,
+  "height": 600,
+  "projection": {
+    "type": "mercator",
+    "center": [133, -28],
+    "scale": 1000
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "https://vega.github.io/vega-datasets/data/world-110m.json",
+        "format": {
+          "type": "topojson",
+          "feature": "countries"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#f0f0f0",  // Light background for the map
+        "stroke": "#888",   // Soft gray border lines
+        "strokeWidth": 1.5
+      }
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/Sam0502/3179/main/test/city.csv",
+        "format": {
+          "type": "csv"
+        }
+      },
+      "mark": {
+        "type": "circle",
+        "opacity": 0.8,  // Slightly transparent
+        "stroke": "#0057e7",  // Blue border for circles
+        "strokeWidth": 0.8
+      },
+      "encoding": {
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"},
+        "size": {"value": 50},  // Circle size
+        "color": {"value": "#FF6347"},  // Tomato color for cities
+        "tooltip": [
+          {"field": "city", "type": "nominal", "title": "City"},
+          {"field": "longitude", "type": "quantitative", "title": "Longitude"},
+          {"field": "latitude", "type": "quantitative", "title": "Latitude"}
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"city": "Melbourne", "longitude": 144.9631, "latitude": -37.8136},
+          {"city": "Sydney", "longitude": 151.2093, "latitude": -33.8688},
+          {"city": "Adelaide", "longitude": 138.6007, "latitude": -34.9285},
+          {"city": "Canberra", "longitude": 149.1310, "latitude": -35.2809}
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",  // Align text to the left of the city
+        "dx": 7,  // Offset to prevent overlap with circles
+        "dy": -5,  // Offset for better placement
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "color": "#1a1a1a"  // Dark gray text
+      },
+      "encoding": {
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"},
+        "text": {"field": "city"}
+      }
+    }
+  ]
+}

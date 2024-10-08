@@ -1,0 +1,394 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<kml xmlns='http://www.opengis.net/kml/2.2'>
+	<Document>
+		<name></name>
+		<description> | Created with https://batchgeo.com</description>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>ADELAIDE </address>
+				<Point>
+					<coordinates>138.6007456,-34.9284989,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>ALBURY </address>
+				<Point>
+					<coordinates>146.9094852,-36.0751193,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>ALICE SPRINGS </address>
+				<Point>
+					<coordinates>133.8807471,-23.698042,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>BRISBANE </address>
+				<Point>
+					<coordinates>153.0260341,-27.4704528,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>BROOME </address>
+				<Point>
+					<coordinates>122.236998,-17.96182,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>CANBERRA </address>
+				<Point>
+					<coordinates>149.1310324,-35.2801846,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>COFFS HARBOUR </address>
+				<Point>
+					<coordinates>153.1138924,-30.2962013,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>DARWIN </address>
+				<Point>
+					<coordinates>130.8444446,-12.4637333,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>DEVONPORT </address>
+				<Point>
+					<coordinates>146.3502862,-41.1800656,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>DUBBO </address>
+				<Point>
+					<coordinates>148.614418,-32.2443908,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>GOLD COAST </address>
+				<Point>
+					<coordinates>153.4,-28.016667,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>HOBART </address>
+				<Point>
+					<coordinates>147.3257196,-42.8826055,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>KALGOORLIE </address>
+				<Point>
+					<coordinates>121.466,-30.749,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>KARRATHA </address>
+				<Point>
+					<coordinates>116.8447057,-20.7336955,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>LAUNCESTON </address>
+				<Point>
+					<coordinates>147.1357671,-41.439068,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>MELBOURNE </address>
+				<Point>
+					<coordinates>144.9630576,-37.8136276,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>PERTH </address>
+				<Point>
+					<coordinates>115.8616783,-31.9513993,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>SUNSHINE COAST </address>
+				<Point>
+					<coordinates>153.066667,-26.65,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>SYDNEY </address>
+				<Point>
+					<coordinates>151.2092955,-33.8688197,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>CAIRNS </address>
+				<Point>
+					<coordinates>145.7709529,-16.9203476,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>BALLINA </address>
+				<Point>
+					<coordinates>153.5658162,-28.8627985,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>HERVEY BAY </address>
+				<Point>
+					<coordinates>152.7676633,-25.2881539,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>PORT MACQUARIE </address>
+				<Point>
+					<coordinates>152.9001817,-31.4349036,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>NEWCASTLE </address>
+				<Point>
+					<coordinates>-1.61778,54.978252,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>HAMILTON ISLAND </address>
+				<Point>
+					<coordinates>148.9572514,-20.3518817,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>AYERS ROCK </address>
+				<Point>
+					<coordinates>131.0368822,-25.3444277,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>GERALDTON </address>
+				<Point>
+					<coordinates>114.611295,-28.7761346,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>BUNDABERG </address>
+				<Point>
+					<coordinates>152.3488923,-24.8661024,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>ARMIDALE </address>
+				<Point>
+					<coordinates>151.6523371,-30.5035714,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>PROSERPINE </address>
+				<Point>
+					<coordinates>148.5832116,-20.4018362,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>MACKAY </address>
+				<Point>
+					<coordinates>149.1868281,-21.1433971,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>ROCKHAMPTON </address>
+				<Point>
+					<coordinates>150.5088889,-23.3786203,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>TOWNSVILLE </address>
+				<Point>
+					<coordinates>146.8169483,-19.2589635,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>BURNIE </address>
+				<Point>
+					<coordinates>145.9044452,-41.0549128,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>MILDURA </address>
+				<Point>
+					<coordinates>142.1367157,-34.2067651,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>WAGGA WAGGA </address>
+				<Point>
+					<coordinates>147.3655103,-35.1025977,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>PORT LINCOLN </address>
+				<Point>
+					<coordinates>135.8597449,-34.7226381,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>PORT HEDLAND </address>
+				<Point>
+					<coordinates>118.6094431,-20.311052,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>NEWMAN </address>
+				<Point>
+					<coordinates>119.7303373,-23.3574915,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>GLADSTONE </address>
+				<Point>
+					<coordinates>151.2497708,-23.8415948,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>MOUNT ISA </address>
+				<Point>
+					<coordinates>139.4930159,-20.7263687,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>MORANBAH </address>
+				<Point>
+					<coordinates>148.0398332,-22.0060858,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>TAMWORTH </address>
+				<Point>
+					<coordinates>150.9293323,-31.0900384,0</coordinates>
+				</Point>
+			</Placemark>
+		<Style id="0"><IconStyle><scale>1</scale><Icon><href>https://batchgeo.com/images/icons/red_shadow_Marker.png</href></Icon><hotSpot x=".3" y=".8" xunits="fraction" yunits="fraction" /></IconStyle><LabelStyle><scale>0</scale></LabelStyle></Style>	</Document>
+</kml>
