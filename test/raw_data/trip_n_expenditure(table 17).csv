@@ -1,4 +1,4 @@
-Trip,Year Ending March 2023,Year Ending March 2024,% of total,% change,Trip expenditure ($M)(2023),Trip expenditure ($M)(2024),% of total,% change
+Trip,Year Ending March 2023,Year Ending March 2024,% of total(trip),% change(trip),Trip expenditure ($M)(2023),Trip expenditure ($M)(2024),% of total(expenditure),% change(expenditure)
 Holiday,3159.272,5318.436,57.795,68.344,28486.436,55466.162,66.517,94.711
 Visiting friends and relatives,2062.535,2418.017,26.276,17.235,13959.293,16272.828,19.515,16.573
 Business,876.589,1264.908,13.746,44.299,6907.144,9793.773,11.745,41.792
