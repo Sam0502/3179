@@ -1,6 +1,4 @@
-,,Trips ('000),Trips ('000),Regional expenditure ($M),Regional expenditure ($M),Avg. expenditure per trip,Avg. expenditure per trip
-,,Year Ending June 2023,Year Ending June 2024,Year Ending June 2023,Year Ending June 2024,Year Ending June 2023,Year Ending June 2024
-Rank,Region,,,,,,
+Rank,Region,Trips ('000),Trips ('000).1,Regional expenditure ($M),Regional expenditure ($M).1,Avg. expenditure per trip,Avg. expenditure per trip.1,Year Ending June 2023,Year Ending June 2024,Year Ending June 2023,Year Ending June 2024,Year Ending June 2023,Year Ending June 2024
 1,Sydney,24933.423,23084.436,3539.589,3916.649,141.962,169.666
 2,Melbourne,22163.888,19217.19,3414.083,3130.557,154.038,162.904
 3,Brisbane,17639.591,16798.145,2513.391,2299.507,142.486,136.891
@@ -53,6 +51,3 @@ Rank,Region,,,,,,
 50,Limestone Coast,940.71,645.222,186.528,115.645,198.284,179.234
 ,Other regions,9472.111,7998.313,1609.848,1708.539,169.957,213.612
 ,Total,219451.495,205065.866,32689.177,32327.358,148.959,157.644
-a. All figures relate to Australian residents aged 15 years and over.,,,,,,,
-Note: 'Trips' were previously referred to as 'Visitors'.,,,,,,,
-Source: Tourism Research Australia: National Visitor Survey,,,,,,,
