@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tourism Data Visualizations</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.30.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.26.0"></script>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #0057e7;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+    .chart-container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+      width: calc(50% - 40px);
+      min-width: 400px;
+    }
+    #analysis {
+      width: calc(100% - 40px);
+      max-width: 800px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+      margin: 20px auto;
+    }
+    h3 {
+      color: #333;
+    }
+    p {
+      line-height: 1.6;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Tourism Data Visualizations</h1>
+  </header>
+
+  <div class="container">
+    <!-- Container for the interactive line chart -->
+    <div class="chart-container" id="vis-line-chart"></div>
+
+    <!-- Container for the bar chart -->
+
+    <!-- Container for the geographic map -->
+    <div class="chart-container" id="vis-map"></div>
+  </div>
+
+  <!-- Container for analysis -->
+  <div id="analysis">
+    <h3>Analysis of Busiest Routes Bar Chart</h3>
+    <p>
+      The bar chart above shows the busiest routes based on the number of passenger trips. 
+      From the data, it is evident that the Melbourne-Sydney route is the most traveled route, 
+      with significantly higher passenger trips compared to others. This is likely due to the high 
+      population and economic activities in both cities, making this a crucial business and tourist corridor.
+    </p>
+    <p>
+      The Brisbane-Sydney and Brisbane-Melbourne routes are also popular, reflecting their significance 
+      as major metropolitan hubs. However, as we move down the list, we see a long tail of less busy 
+      routes connecting smaller cities and regions. The variety of routes also indicates the diverse 
+      travel patterns, with multiple medium-traffic routes linking regional centers and holiday destinations.
+    </p>
+    <p>
+      The relatively low number of trips on some routes could be due to limited demand or fewer flights 
+      operating between those city pairs. The distribution suggests that while a few routes dominate 
+      in terms of traffic, there is also considerable regional connectivity in Australia’s aviation network.
+    </p>
+  </div>
+
+  <script>
+    // Updated Line chart specification with legend-based filtering
+    const lineChartSpec = {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "An interactive line chart showing the number of passenger trips over time for major city pairs.",
+  "data": {
+    "url": "https://raw.githubusercontent.com/Sam0502/3179/refs/heads/main/test/new_data/filtered.csv",
+    "format": {"type": "csv"}
+  },
+  "transform": [
+    {"calculate": "datum.City1 + '-' + datum.City2", "as": "city_pair"},
+    {"calculate": "toDate(datum.Year + '-01-01')", "as": "YearDate"},
+    {"filter": {"selection": "legendFilter"}}
+  ],
+  "width": "container",
+  "height": 400,
+  "mark": {
+    "type": "line",
+    "point": true,
+    "tooltip": [
+      {"field": "Year", "type": "temporal", "title": "Year"},
+      {"field": "city_pair", "type": "nominal", "title": "City Pair"},
+      {"field": "Passenger_Trips", "type": "quantitative", "title": "Passenger Trips"}
+    ]
+  },
+  "encoding": {
+    "x": {
+      "field": "YearDate",
+      "type": "temporal",
+      "title": "Year",
+      "axis": {"format": "%Y", "tickCount": "year", "labelAngle": -45}
+    },
+    "y": {
+      "field": "Passenger_Trips",
+      "type": "quantitative",
+      "title": "Number of Passenger Trips",
+      "axis": {"titleColor": "#333", "grid": true}
+    },
+    "color": {
+      "field": "city_pair",
+      "type": "nominal",
+      "title": "City Pair",
+      "scale": {"scheme": "category10"},
+      "legend": {"interactive": true}
+    },
+    "opacity": {
+      "condition": {"selection": "legendFilter", "value": 1},
+      "value": 0.3
+    }
+  },
+  "selection": {
+    "legendFilter": {
+      "type": "multi",
+      "fields": ["city_pair"],
+      "bind": "legend"
+    },
+    "zoom": {"type": "interval", "bind": "scales", "encodings": ["x"]}
+  },
+  "config": {
+    "axis": {"labelFontSize": 12, "titleFontSize": 14, "gridColor": "#e0e0e0"},
+    "legend": {"labelFontSize": 12, "titleFontSize": 14},
+    "mark": {
+      "line": {"strokeWidth": 2},
+      "point": {"filled": true, "fill": "white", "strokeWidth": 1}
+    }
+  }
+};  
+    // Geographic map specification remains unchanged
+    const mapSpec = {
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": "container",   
+    "height": 500, 
+    "autosize": {
+      "type": "fit",       
+      "contains": "padding"
+    },
+    "projection": {
+      "type": "mercator",
+      "center": [133, -28],  
+      "scale": 450          
+    },
+    "layer": [
+      {
+        "data": {
+          "url": "https://vega.github.io/vega-datasets/data/world-110m.json",
+          "format": {"type": "topojson", "feature": "countries"}
+        },
+        "mark": {
+          "type": "geoshape",
+          "fill": "#65305c1b",
+          "stroke": "#6c2f2f",
+          "strokeWidth": 1.5
+        }
+      },
+      {
+        "data": {
+          "url": "https://raw.githubusercontent.com/Sam0502/3179/refs/heads/main/test/city_combined.csv",
+          "format": {"type": "csv"}
+        },
+        "layer": [
+          {
+            "mark": {
+              "type": "circle",
+              "opacity": 0.8,
+              "stroke": "#0057e7",
+              "strokeWidth": 1
+            },
+            "encoding": {
+              "longitude": {"field": "longitude", "type": "quantitative"},
+              "latitude": {"field": "latitude", "type": "quantitative"},
+              "size": {
+                "field": "count",
+                "type": "quantitative",
+                "scale": {"range": [70, 400]}
+              },
+              "color": {"value": "#FF6347"},
+              "tooltip": [
+                {"field": "city", "type": "nominal", "title": "City"},
+                {"field": "count", "type": "quantitative", "title": "Count"},
+                {"field": "longitude", "type": "quantitative", "title": "Longitude"},
+                {"field": "latitude", "type": "quantitative", "title": "Latitude"}
+              ]
+            }
+          },
+          {
+            "transform": [
+              {
+                "filter": {
+                  "field": "city",
+                  "oneOf": ["SYDNEY", "MELBOURNE", "BRISBANE", "PERTH"]
+                }
+              }
+            ],
+            "mark": {
+              "type": "text",
+              "align": "left",
+              "dx": 7,
+              "dy": -5,
+              "fontSize": 12,
+              "fontWeight": "bold",
+              "color": "#1a1a1a"
+            },
+            "encoding": {
+              "longitude": {"field": "longitude", "type": "quantitative"},
+              "latitude": {"field": "latitude", "type": "quantitative"},
+              "text": {"field": "city"}
+            }
+          }
+        ]
+      }
+    ],
+    "config": {}
+  }
+  
+
+
+    
+    // Embed the updated line chart into the container with id 'vis-line-chart'
+    vegaEmbed("#vis-line-chart", lineChartSpec, {mode: "vega-lite"}).then(console.log).catch(console.warn);
+    vegaEmbed("#vis-map", mapSpec, {mode: "vega-lite"}).then(console.log).catch(console.warn);
+  </script>
+</body>
+</html>

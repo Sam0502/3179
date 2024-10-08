@@ -1,0 +1,47 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "https://raw.githubusercontent.com/Sam0502/3179/HEAD/test/raw_data/trip_n_expenditure(table%2017).csv",
+      "format": {
+        "type": "csv"
+      }
+    },
+    "width": 400,
+    "height": 600,
+    "mark": "bar",
+    "encoding": {
+      "x": {
+        "field": "Trip",
+        "type": "nominal",
+        "title": "Purpose of Trip"
+      },
+      "y": {
+        "field": "Trip expenditure ($M)(2023)",
+        "type": "quantitative",
+        "title": "Trip Expenditure ($M)",
+        "axis": {"grid": true}
+      },
+      "y2": {
+        "field": "Trip expenditure ($M)(2024)",
+        "type": "quantitative"
+      },
+      "color": {
+        "field": "Trip",
+        "type": "nominal",
+        "scale": {"range": ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728"]},
+        "legend": null
+      },
+      "tooltip": [
+        {"field": "Trip", "type": "nominal", "title": "Purpose"},
+        {"field": "Trip expenditure ($M)(2023)", "type": "quantitative", "title": "Trip Expenditure ($M) 2023", "format": ",.2f"},
+        {"field": "Trip expenditure ($M)(2024)", "type": "quantitative", "title": "Trip Expenditure ($M) 2024", "format": ",.2f"},
+        {"field": "% of total", "type": "quantitative", "title": "% of Total", "format": ".1%"},
+        {"field": "% change", "type": "quantitative", "title": "% Change", "format": ".1%"}
+      ]
+    },
+    "config": {
+      "axis": {"labelFontSize": 12, "titleFontSize": 14},
+      "bar": {"cornerRadius": 4}
+    }
+  }
+  

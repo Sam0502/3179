@@ -1,0 +1,376 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<kml xmlns='http://www.opengis.net/kml/2.2'>
+	<Document>
+		<name>Geolocation</name>
+		<description> | Created with https://batchgeo.com</description>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address> Sydney</address>
+				<Point>
+					<coordinates>151.2092955,-33.8688197,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address> Melbourne</address>
+				<Point>
+					<coordinates>144.9630576,-37.8136276,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address> Brisbane</address>
+				<Point>
+					<coordinates>153.0260341,-27.4704528,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address> Destination Perth</address>
+				<Point>
+					<coordinates>115.8533099,-31.9508929,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address> Gold Coast</address>
+				<Point>
+					<coordinates>153.4,-28.016667,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address> North Coast NSW</address>
+				<Point>
+					<coordinates>153.0147578,-29.2758152,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address> Sunshine Coast</address>
+				<Point>
+					<coordinates>153.066667,-26.65,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address> South Coast</address>
+				<Point>
+					<coordinates>149.6564494,-36.6806101,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address> Yarra Valley and Dandenong Ranges</address>
+				<Point>
+					<coordinates>145.3501044,-37.8334732,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address> Adelaide</address>
+				<Point>
+					<coordinates>138.6007456,-34.9284989,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address> Geelong and the Bellarine</address>
+				<Point>
+					<coordinates>144.6150221,-38.1343835,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address> Australia&apos;s South West</address>
+				<Point>
+					<coordinates>116.0413889,-34.0556829,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address> Central Coast</address>
+				<Point>
+					<coordinates>151.21729,-33.2319648,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address> Central NSW</address>
+				<Point>
+					<coordinates>146.921099,-31.2532183,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address> Blue Mountains</address>
+				<Point>
+					<coordinates>150.4865272,-33.3856304,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address> Gippsland</address>
+				<Point>
+					<coordinates>147.4627259,-37.5831982,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address> Great Ocean Road</address>
+				<Point>
+					<coordinates>143.3915596,-38.6804339,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address> Tropical North Queensland</address>
+				<Point>
+					<coordinates>144.0847926,-22.575197,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address> Fleurieu Peninsula</address>
+				<Point>
+					<coordinates>138.5,-35.5,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address> Bendigo Lodden</address>
+				<Point>
+					<coordinates>144.2785764,-36.7596196,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address> Hobart and the South</address>
+				<Point>
+					<coordinates>147.3257196,-42.8826055,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address> Ballarat</address>
+				<Point>
+					<coordinates>143.8502556,-37.5621587,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address> Canberra</address>
+				<Point>
+					<coordinates>149.1310324,-35.2801846,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address> New England North West</address>
+				<Point>
+					<coordinates>-70.8226541,43.9653889,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address> Phillip Island</address>
+				<Point>
+					<coordinates>145.2038278,-38.4898703,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address> Goulburn</address>
+				<Point>
+					<coordinates>149.713629,-34.7567489,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address> Riverina</address>
+				<Point>
+					<coordinates>120.553001,-29.750299,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address> Townsville</address>
+				<Point>
+					<coordinates>146.8169483,-19.2589635,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address> Launceston and the North</address>
+				<Point>
+					<coordinates>147.1357671,-41.439068,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address> Macedon</address>
+				<Point>
+					<coordinates>144.5556723,-37.4281226,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address> Adelaide Hills</address>
+				<Point>
+					<coordinates>138.8397403,-34.9062557,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address> Capricorn Coast</address>
+				<Point>
+					<coordinates>150.829955,-23.2567065,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address> Australia&apos;s Coral Coast</address>
+				<Point>
+					<coordinates>113.7723112,-23.1422976,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address> Australia&apos;s Golden Outback</address>
+				<Point>
+					<coordinates>115.8533099,-31.9508929,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address> Bundaberg</address>
+				<Point>
+					<coordinates>152.3488923,-24.8661024,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address> Fraser Coast</address>
+				<Point>
+					<coordinates>152.5443612,-25.4507008,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address> Mackay</address>
+				<Point>
+					<coordinates>149.1868281,-21.1433971,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address> Barossa</address>
+				<Point>
+					<coordinates>138.95,-34.5333333,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address> Murray, River, Lakes and Coorong</address>
+				<Point>
+					<coordinates>139.5553549,-35.9963695,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address> Yorke Peninsula</address>
+				<Point>
+					<coordinates>137.6797422,-34.5521576,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address> Limestone Coast</address>
+				<Point>
+					<coordinates>140.3481835,-36.7235617,0</coordinates>
+				</Point>
+			</Placemark>
+		<Style id="0"><IconStyle><scale>1</scale><Icon><href>https://batchgeo.com/images/icons/red_shadow_Marker.png</href></Icon><hotSpot x=".3" y=".8" xunits="fraction" yunits="fraction" /></IconStyle><LabelStyle><scale>0</scale></LabelStyle></Style>	</Document>
+</kml>
