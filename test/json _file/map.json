@@ -1,57 +1,163 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "description": "A map showing the number of trips and average expenditure per trip for different regions in 2023.",
-    "width": 800,
-    "height": 600,
-    "projection": {
-      "type": "mercator"
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A map showing the number of trips and average expenditure per trip for different regions, with state boundaries and a year filter.",
+  "width": 800,
+  "height": 600,
+  "projection": {
+    "type": "mercator",
+    "center": [133, -28],
+    "scale": 1000
+  },
+  "params": [
+    {
+      "name": "year_filter_selected",
+      "value": "2023",
+      "bind": {
+        "input": "select",
+        "options": ["2023", "2024"],
+        "labels": ["2023", "2024"],
+        "name": "Select Year"
+      }
+    }
+  ],
+  "layer": [
+    {
+      "data": {
+        "graticule": true
+      },
+      "mark": {
+        "type": "geoshape",
+        "stroke": "#ccc",
+        "strokeWidth": 0.5
+      }
     },
-    "layer": [
-      {
-        "data": {
-          "url": "https://vega.github.io/vega-datasets/data/world-110m.json",
-          "format": {
-            "type": "topojson",
-            "feature": "countries"
-          }
-        },
-        "mark": {
-          "type": "geoshape",
-          "fill": "#f0f0f0",
-          "stroke": "#888",
-          "strokeWidth": 1.5
+    {
+      "data": {
+        "url": "https://vega.github.io/vega-datasets/data/world-110m.json",
+        "format": {
+          "type": "topojson",
+          "feature": "countries"
         }
       },
-      {
-        "data": {
-          "url": "https://raw.githubusercontent.com/Sam0502/3179/refs/heads/main/test/raw_data/Table%2016.csv",
-          "format": {
-            "type": "csv"
-          }
-        },
-        "transform": [
-          {
-            "filter": "datum.longitude != null && datum.latitude != null"
-          }
-        ],
-        "mark": {
-          "type": "circle",
-          "opacity": 0.8,
-          "stroke": "#0057e7",
-          "strokeWidth": 0.8
-        },
-        "encoding": {
-          "longitude": {"field": "longitude", "type": "quantitative"},
-          "latitude": {"field": "latitude", "type": "quantitative"},
-          "size": {"field": "`Trips_Year_2023`", "type": "quantitative", "scale": {"range": [10, 100]}},
-          "color": {"field": "`Avg. expenditure per trip(2023)`", "type": "quantitative", "scale": {"scheme": "blues"}},
-          "tooltip": [
-            {"field": "Region", "type": "nominal", "title": "Region"},
-            {"field": "`Trips_Year_2023", "type": "quantitative", "title": "Trips ('000) in 2023"},
-            {"field": "`Avg. expenditure per trip(2023)`", "type": "quantitative", "title": "Avg. Expenditure per Trip (2023)"},
-            {"field": "`Regional expenditure ($M)(2023)`", "type": "quantitative", "title": "Regional Expenditure ($M) in 2023"}
-          ]
-        }
+      "mark": {
+        "type": "geoshape",
+        "fill": "#f0f0f0",
+        "stroke": "#888",
+        "strokeWidth": 1.5
       }
-    ]
-  }
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/johan/world.geo.json/master/countries/AUS.geo.json",
+        "format": {
+          "type": "geojson"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": null,
+        "stroke": "#000",
+        "strokeWidth": 1.5,
+        "strokeDash": [5, 5]
+      }
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/Sam0502/3179/refs/heads/main/test/raw_data/Table%2016.csv",
+        "format": {
+          "type": "csv"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.longitude != null && datum.latitude != null"
+        },
+        {
+          "fold": [
+            "Trips_Year_2023",
+            "Trips_Year_2024",
+            "Avg. expenditure per trip(2023)",
+            "Avg. expenditure per trip(2024)",
+            "Regional expenditure ($M)(2023)",
+            "Regional expenditure ($M)(2024)"
+          ],
+          "as": ["Variable", "Value"]
+        },
+        {
+          "calculate": "replace(replace(trim(datum.Variable), '(', ''), ')', '')",
+          "as": "Clean_Variable"
+        },
+        {
+          "calculate": "substring(datum.Clean_Variable, length(datum.Clean_Variable) - 4, length(datum.Clean_Variable))",
+          "as": "Year"
+        },
+        {
+          "calculate": "indexof(datum.Clean_Variable, 'Trips') == 0 ? 'Trips' : (indexof(datum.Clean_Variable, 'Avg. expenditure per trip') == 0 ? 'Avg_expenditure_per_trip' : 'Regional_expenditure')",
+          "as": "Metric"
+        },
+        {
+          "pivot": "Metric",
+          "value": "Value",
+          "groupby": ["Region", "Year", "longitude", "latitude"]
+        },
+        {
+          "filter": "year_filter_selected == datum.Year"
+        }
+      ],
+      "mark": {
+        "type": "circle",
+        "opacity": 0.8,
+        "stroke": "#0057e7",
+        "strokeWidth": 0.8
+      },
+      "encoding": {
+        "longitude": {
+          "field": "longitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "latitude",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "Trips",
+          "type": "quantitative",
+          "title": "Trips ('000)",
+          "scale": {
+            "range": [100, 1000]
+          }
+        },
+        "color": {
+          "field": "Avg_expenditure_per_trip",
+          "type": "quantitative",
+          "title": "Avg. Expenditure per Trip",
+          "scale": {
+            "scheme": "blues"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "Region",
+            "type": "nominal",
+            "title": "Region"
+          },
+          {
+            "field": "Trips",
+            "type": "quantitative",
+            "title": "Trips ('000)"
+          },
+          {
+            "field": "Avg_expenditure_per_trip",
+            "type": "quantitative",
+            "title": "Avg. Expenditure per Trip"
+          },
+          {
+            "field": "Regional_expenditure",
+            "type": "quantitative",
+            "title": "Regional Expenditure ($M)"
+          }
+        ]
+      }
+    }
+  ]
+}
