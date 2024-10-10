@@ -1,6 +1,4 @@
-,,Trips ('000) b,Trips ('000) b,Visitor nights ('000),Visitor nights ('000),Regional expenditure ($M),Regional expenditure ($M),Avg. expenditure per trip ($),Avg. expenditure per trip ($),Avg. expenditure per trip per night ($),Avg. expenditure per trip per night ($),Avg. expenditure per trip per night ($) (commercial accommodation) c,Avg. expenditure per trip per night ($) (commercial accommodation) c
-,,Year Ending June 2023,Year Ending June 2024,Year Ending June 2023,Year Ending June 2024,Year Ending June 2023,Year Ending June 2024,Year Ending June 2023,Year Ending June 2024,Year Ending June 2023,Year Ending June 2024,Year Ending June 2023,Year Ending June 2024
-Rank,Region,,,,,,,,,,,,
+Rank,Region,Trips ('000)(2023),Trips ('000)(2024),Visitor nights ('000)(2023),Visitor nights ('000)(2024),Regional expenditure(2023)(M),Regional expenditure(2024)(M),Avg expenditure per trip(2023),Avg expenditure per trip(2024),Avg expenditure per trip per night(2023),Avg expenditure per trip per night(2024),Avg expenditure per trip per night(2023)(commercial accommodation),Avg expenditure per trip per night(2024)(commercial accommodation)
 1,Sydney,10727.514,11015.387,30112.579,31527.384,11102.965,11822.509,1034.9988823132742,1073.2722327413462,368.71518045664567,374.99175320096333,461.424,507.051
 2,Melbourne,9829.835,10300.913,29033.618,29020.033,11722.377,12037.742,1192.5303934399715,1168.609229104255,403.75185069942023,414.8080052148804,472.787,511.374
 3,Brisbane,7211.106,7548.941,22379.922,23746.002,6930.15,7521.936,961.0384315526634,996.4226770350967,309.6592561850752,316.7664181953661,414.922,397.455
@@ -51,10 +49,3 @@ Rank,Region,,,,,,,,,,,,
 48,North West,664.54,653.406,1850.416,2082.314,539.09,486.832,811.2228007343426,745.0681505832515,291.33448910947595,233.79375060629667,358.666,284.749
 49,Limestone Coast,681.076,760.597,1741.063,2066.373,371.409,321.663,545.3268064063335,422.9085836520523,213.3231250104103,155.66550666312423,269.092,194.681
 50,Ballarat,863.802,1014.903,1896.686,2012.175,410.997,453.634,475.8000097244507,446.97276488492,216.6921672854653,225.44460596121112,304.446,323.624
-,Other regions,9581.155,8943.777,30425.428,26666.085,6450.962,6176.963,673.2969041832639,690.6436732490088,212.02534932294134,231.64116517291535,292.725,308.445
-,Total,111392.556,113756.617,404663.473,399926.105,108295.306,109886.835,972.1951797209861,965.981917342004,267.6181894974247,274.76784742521374,355.12,364.615
-a. All figures relate to Australian residents aged 15 years and over.,,,,,,,,,,,,,
-b. Components may not add to the total as overnight visitors may have visited a number of regions during their trip.,,,,,,,,,,,,,
-"c. This is the average of only those who identified as having stayed in commercial accommodation. For further information on what this includes, see Section 1 of the reference tab",,,,,,,,,,,,,
-Note: 'Trips' were previously referred to as 'Visitors'.,,,,,,,,,,,,,
-Source: Tourism Research Australia: National Visitor Survey,,,,,,,,,,,,,
