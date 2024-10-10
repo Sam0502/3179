@@ -1,4 +1,4 @@
-Region,Trips_Year_2023,Trips_Year_2024,Regional expenditure ($M)(2023),Regional expenditure ($M)(2024),Avg. expenditure per trip(2023),Avg. expenditure per trip(2024),longitude,latitude
+Region,Trips_Year_2023,Trips_Year_2024,Regional expenditure(2023),Regional expenditure(2024),Avg expenditure per trip(2023),Avg expenditure per trip(2024),longitude,latitude
 Sydney,24933.423,23084.436,3539.589,3916.649,141.962,169.666,151.2092955,-33.8688197
 Melbourne,22163.888,19217.19,3414.083,3130.557,154.038,162.904,144.9630576,-37.8136276
 Brisbane,17639.591,16798.145,2513.391,2299.507,142.486,136.891,153.0260341,-27.4704528
