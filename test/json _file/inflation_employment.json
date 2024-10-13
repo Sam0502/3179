@@ -1,0 +1,96 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A line chart showing the comparison between the inflation rate and the employment rate in Australia.",
+  "width": "container",
+  "height": 600,
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/Sam0502/3179/refs/heads/main/test/All%20groups%20CPI,%20Australia,%20quarterly%20and%20annual%20movement%20(%25).csv",
+        "format": {
+          "type": "csv"
+        }
+      },
+      "mark": {
+        "type": "line",
+        "point": true
+      },
+      "encoding": {
+        "x": {
+          "field": "Time",
+          "type": "temporal",
+          "title": "Time"
+        },
+        "y": {
+          "field": "Annual change (%)",
+          "type": "quantitative",
+          "title": "Percentage (%)"
+        },
+        "color": {
+          "datum": "Inflation Rate",
+          "type": "nominal",
+          "legend": {
+            "title": "Legend",
+            "orient": "right"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "Time",
+            "type": "temporal",
+            "title": "Date"
+          },
+          {
+            "field": "Annual change (%)",
+            "type": "quantitative",
+            "title": "Inflation Rate (%)"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/Sam0502/3179/refs/heads/main/test/Employment-to-population%20ratio.csv",
+        "format": {
+          "type": "csv"
+        }
+      },
+      "mark": {
+        "type": "line",
+        "point": true
+      },
+      "encoding": {
+        "x": {
+          "field": "Time",
+          "type": "temporal",
+          "title": "Time"
+        },
+        "y": {
+          "field": "Seasonally adjusted (%)",
+          "type": "quantitative",
+          "title": "Percentage (%)"
+        },
+        "color": {
+          "datum": "Employment Rate",
+          "type": "nominal",
+          "legend": {
+            "title": "Legend",
+            "orient": "right"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "Time",
+            "type": "temporal",
+            "title": "Date"
+          },
+          {
+            "field": "Seasonally adjusted (%)",
+            "type": "quantitative",
+            "title": "Employment Rate (%)"
+          }
+        ]
+      }
+    }
+  ]
+}

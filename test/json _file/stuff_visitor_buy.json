@@ -1,0 +1,68 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A visualization of data from Table 14",
+    "width": "container",
+    "height": 400,
+    "data": {
+      "url": "https://raw.githubusercontent.com/Sam0502/3179/refs/heads/main/test/new_data/Table%2014.csv",
+      "format": {
+        "type": "csv"
+      }
+    },
+    "params": [
+      {
+        "name": "year_filter_selected",
+        "value": "2023",
+        "bind": {
+          "input": "select",
+          "options": ["2023", "2024"],
+          "labels": ["2023", "2024"],
+          "name": "Select Year"
+        }
+      }
+    ],
+    "transform": [
+      {
+        "calculate": "year_filter_selected == '2023' ? datum['Year Ending June 2023(M)'] : datum['Year Ending June 2024(M)']",
+        "as": "Value"
+      },
+      {
+        "window": [{ "op": "rank", "as": "rank" }],
+        "sort": [{ "field": "Value", "order": "descending" }]
+      }
+    ],
+    "mark": "bar",
+    "encoding": {
+      "x": {
+        "field": "Spend_on",
+        "type": "nominal",
+        "title": "Category",
+        "sort": "-y"
+      },
+      "y": {
+        "field": "Value",
+        "type": "quantitative",
+        "title": "Value"
+      },
+      "color": {
+        "field": "Spend_on",
+        "type": "nominal",
+        "title": "Category",
+        "scale": {
+          "scheme": "category10"
+        }
+      },
+      "tooltip": [
+        {
+          "field": "Spend_on",
+          "type": "nominal",
+          "title": "Category"
+        },
+        {
+          "field": "Value",
+          "type": "quantitative",
+          "title": "Value"
+        }
+      ]
+    }
+  }

@@ -1,0 +1,214 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<kml xmlns='http://www.opengis.net/kml/2.2'>
+	<Document>
+		<name>new map(international)</name>
+		<description> | Created with https://batchgeo.com</description>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>Fiji </address>
+				<Point>
+					<coordinates>178.065032,-17.713371,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>United Kingdom </address>
+				<Point>
+					<coordinates>-3.435973,55.378051,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>Italy </address>
+				<Point>
+					<coordinates>12.56738,41.87194,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>France </address>
+				<Point>
+					<coordinates>2.213749,46.227638,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>Germany </address>
+				<Point>
+					<coordinates>10.451526,51.165691,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>Other North West Europe </address>
+				<Point>
+					<coordinates>15.2551187,54.5259614,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>Other Europe </address>
+				<Point>
+					<coordinates>15.2551187,54.5259614,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>USA </address>
+				<Point>
+					<coordinates>-106.5348379,38.7945952,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>Canada </address>
+				<Point>
+					<coordinates>-106.346771,56.130366,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>China </address>
+				<Point>
+					<coordinates>104.195397,35.86166,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>Hong Kong </address>
+				<Point>
+					<coordinates>114.1693611,22.3193039,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>India </address>
+				<Point>
+					<coordinates>78.96288,20.593684,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>Japan </address>
+				<Point>
+					<coordinates>138.252924,36.204824,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>Indonesia </address>
+				<Point>
+					<coordinates>113.921327,-0.789275,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>Thailand </address>
+				<Point>
+					<coordinates>100.992541,15.870032,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>Singapore </address>
+				<Point>
+					<coordinates>103.819836,1.352083,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>Malaysia </address>
+				<Point>
+					<coordinates>101.975766,4.210484,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>Viet Nam </address>
+				<Point>
+					<coordinates>108.277199,14.058324,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>Philippines </address>
+				<Point>
+					<coordinates>121.774017,12.879721,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>Other South East Asia </address>
+				<Point>
+					<coordinates>115.66283,-2.2179704,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>Other Asia </address>
+				<Point>
+					<coordinates>100.6196553,34.047863,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>North Africa and Middle East </address>
+				<Point>
+					<coordinates>42.5509603,29.2985278,0</coordinates>
+				</Point>
+			</Placemark>
+					<Placemark>
+				<styleUrl>#0</styleUrl>
+								<ExtendedData>
+									</ExtendedData>
+				<address>South Africa </address>
+				<Point>
+					<coordinates>22.937506,-30.559482,0</coordinates>
+				</Point>
+			</Placemark>
+		<Style id="0"><IconStyle><scale>1</scale><Icon><href>https://batchgeo.com/images/icons/red_shadow_Marker.png</href></Icon><hotSpot x=".3" y=".8" xunits="fraction" yunits="fraction" /></IconStyle><LabelStyle><scale>0</scale></LabelStyle></Style>	</Document>
+</kml>

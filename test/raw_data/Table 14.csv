@@ -1,7 +1,4 @@
-,,
-14 Day trip total expenditure by expenditure item a,,
-,Year Ending June 2023,Year Ending June 2024
-Total expenditure ($M),,
+Spend_on,Year Ending June 2023(M),Year Ending June 2024(M)
 Domestic airfares,520.962,627.463
 Package Tours,np,np
 Organised Tours,79.163,np
@@ -20,8 +17,4 @@ Gambling,68.033,132.176
 Education fees,np,np
 Convention / Conference / Seminar / Trade fair,np,np
 Other expenditure nfd,1276.004,1717.088
-Total,32689.177,32327.358
-a. All figures relate to Australian residents aged 15 years and over.,,
-np. Data is not publishable as the survey error is too high for most practical purposes.,,
-nfd. Not further defined,,
-Source: Tourism Research Australia: National Visitor Survey,,
+

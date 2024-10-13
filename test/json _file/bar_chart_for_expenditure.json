@@ -1,0 +1,136 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bar chart comparing trips, visitor nights, and regional expenditure in Australia for 2023 and 2024 with layered regions and filtering for better interaction.",
+    "width": "container",
+    "height": 600,
+    "data": {
+      "url": "https://raw.githubusercontent.com/Sam0502/3179/refs/heads/main/test/raw_data/Table%2010.csv",
+      "format": {
+        "type": "csv"
+      }
+    },
+    "transform": [
+      {
+        "fold": [
+          "(2023)Trips",
+          "(2024)Trips",
+          "(2023)Visitor nights",
+          "(2024)Visitor nights",
+          "(2023)Regional expenditure(M)",
+          "(2024)Regional expenditure(M)"
+        ],
+        "as": ["YearWithLabel", "Value"]
+      },
+      {
+        "calculate": "substring(datum.YearWithLabel, length(datum.YearWithLabel) + 1, 1)",
+        "as": "Year"
+      },
+      {
+        "calculate": "indexof(datum.YearWithLabel, 'Trips') >= 0 ? 'Trips' : indexof(datum.YearWithLabel, 'Visitor nights') >= 0 ? 'Visitor Nights' : 'Regional Expenditure'",
+        "as": "Metric"
+      }
+    ],
+    "layer": [
+      {
+        "mark": {
+          "type": "bar",
+          "opacity": 0.7
+        },
+        "selection": {
+          "regionFilter": {
+            "type": "multi",
+            "fields": ["Region"],
+            "bind": {
+              "Region": {
+                "input": "select",
+                "options": [
+                  "Sydney",
+                  "Melbourne",
+                  "Brisbane",
+                  "Perth",
+                  "Adelaide",
+                  "Gold Coast",
+                  "Canberra"
+                ],
+                "name": "Select Region"
+              }
+            }
+          }
+        },
+        "encoding": {
+          "x": {
+            "field": "Region",
+            "type": "nominal",
+            "title": "Region",
+            "sort": "-y"
+          },
+          "y": {
+            "field": "Value",
+            "type": "quantitative",
+            "title": "Value (in Million $ or Visitor Nights)"
+          },
+          "color": {
+            "field": "Year",
+            "type": "nominal",
+            "title": "Year (2023 vs 2024)",
+            "scale": {
+              "scheme": "category10"
+            }
+          },
+          "tooltip": [
+            {
+              "field": "Region",
+              "type": "nominal",
+              "title": "Region"
+            },
+            {
+              "field": "Year",
+              "type": "nominal",
+              "title": "Year (2023 vs 2024)"
+            },
+            {
+              "field": "Metric",
+              "type": "nominal",
+              "title": "Metric (Trips, Visitor Nights, or Expenditure)"
+            },
+            {
+              "field": "Value",
+              "type": "quantitative",
+              "title": "Value (Million $ or Visitor Nights)"
+            }
+          ]
+        }
+      },
+      {
+        "transform": [
+          {
+            "filter": {
+              "selection": "regionFilter"
+            }
+          }
+        ],
+        "mark": "bar",
+        "encoding": {
+          "x": {
+            "field": "Region",
+            "type": "nominal",
+            "title": "Region",
+            "sort": "-y"
+          },
+          "y": {
+            "field": "Value",
+            "type": "quantitative",
+            "title": "Value (in Million $ or Visitor Nights)"
+          },
+          "color": {
+            "field": "Year",
+            "type": "nominal",
+            "title": "Year (2023 vs 2024)",
+            "scale": {
+              "scheme": "category10"
+            }
+          }
+        }
+      }
+    ]
+  }

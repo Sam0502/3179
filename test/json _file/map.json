@@ -1,12 +1,10 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "A map showing the number of trips and average expenditure per trip for different regions, with state boundaries and a year filter.",
+  "description": "A map showing regional data in Australia using new datasets, allowing the user to select between 2023 and 2024.",
   "width": 800,
   "height": 600,
   "projection": {
-    "type": "mercator",
-    "center": [133, -28],
-    "scale": 1000
+    "type": "mercator"
   },
   "params": [
     {
@@ -21,16 +19,6 @@
     }
   ],
   "layer": [
-    {
-      "data": {
-        "graticule": true
-      },
-      "mark": {
-        "type": "geoshape",
-        "stroke": "#ccc",
-        "strokeWidth": 0.5
-      }
-    },
     {
       "data": {
         "url": "https://vega.github.io/vega-datasets/data/world-110m.json",
@@ -48,60 +36,68 @@
     },
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/johan/world.geo.json/master/countries/AUS.geo.json",
-        "format": {
-          "type": "geojson"
-        }
-      },
-      "mark": {
-        "type": "geoshape",
-        "fill": null,
-        "stroke": "#000",
-        "strokeWidth": 1.5,
-        "strokeDash": [5, 5]
-      }
-    },
-    {
-      "data": {
-        "url": "https://raw.githubusercontent.com/Sam0502/3179/refs/heads/main/test/raw_data/Table%2016.csv",
+        "url": "https://raw.githubusercontent.com/Sam0502/3179/refs/heads/main/test/new_geolocation.csv",
         "format": {
           "type": "csv"
         }
       },
       "transform": [
         {
-          "filter": "datum.longitude != null && datum.latitude != null"
+          "lookup": "Country",
+          "from": {
+            "data": {
+              "url": "https://raw.githubusercontent.com/Sam0502/3179/refs/heads/main/test/raw_data/Table%2018(1).csv",
+              "format": {
+                "type": "csv"
+              }
+            },
+            "key": "Country",
+            "fields": ["Year_2023", "Year_2024"]
+          },
+          "as": ["Trips_2023", "Trips_2024"]
         },
         {
-          "fold": [
-            "Trips_Year_2023",
-            "Trips_Year_2024",
-            "Avg. expenditure per trip(2023)",
-            "Avg. expenditure per trip(2024)",
-            "Regional expenditure ($M)(2023)",
-            "Regional expenditure ($M)(2024)"
-          ],
-          "as": ["Variable", "Value"]
+          "lookup": "Country",
+          "from": {
+            "data": {
+              "url": "https://raw.githubusercontent.com/Sam0502/3179/refs/heads/main/test/raw_data/Table%2018(2).csv",
+              "format": {
+                "type": "csv"
+              }
+            },
+            "key": "Country",
+            "fields": ["Year_2023", "Year_2024"]
+          },
+          "as": ["Visitor_Nights_2023", "Visitor_Nights_2024"]
         },
         {
-          "calculate": "replace(replace(trim(datum.Variable), '(', ''), ')', '')",
-          "as": "Clean_Variable"
+          "lookup": "Country",
+          "from": {
+            "data": {
+              "url": "https://raw.githubusercontent.com/Sam0502/3179/refs/heads/main/test/raw_data/Table%2018(3).csv",
+              "format": {
+                "type": "csv"
+              }
+            },
+            "key": "Country",
+            "fields": ["Year_2023", "Year_2024"]
+          },
+          "as": ["Expenditure_2023", "Expenditure_2024"]
         },
         {
-          "calculate": "substring(datum.Clean_Variable, length(datum.Clean_Variable) - 4, length(datum.Clean_Variable))",
-          "as": "Year"
+          "calculate": "year_filter_selected == '2023' ? datum.Trips_2023 : datum.Trips_2024",
+          "as": "Trips"
         },
         {
-          "calculate": "indexof(datum.Clean_Variable, 'Trips') == 0 ? 'Trips' : (indexof(datum.Clean_Variable, 'Avg. expenditure per trip') == 0 ? 'Avg_expenditure_per_trip' : 'Regional_expenditure')",
-          "as": "Metric"
+          "calculate": "year_filter_selected == '2023' ? datum.Visitor_Nights_2023 : datum.Visitor_Nights_2024",
+          "as": "Visitor_Nights"
         },
         {
-          "pivot": "Metric",
-          "value": "Value",
-          "groupby": ["Region", "Year", "longitude", "latitude"]
+          "calculate": "year_filter_selected == '2023' ? datum.Expenditure_2023 : datum.Expenditure_2024",
+          "as": "Expenditure"
         },
         {
-          "filter": "year_filter_selected == datum.Year"
+          "filter": "datum.longitude != null && datum.latitude != null && datum.Trips != null && datum.Expenditure != null && datum.Trips > 0 && datum.Expenditure > 0"
         }
       ],
       "mark": {
@@ -124,20 +120,23 @@
           "type": "quantitative",
           "title": "Trips ('000)",
           "scale": {
-            "range": [100, 1000]
+            "range": [10, 200],
+            "zero": false
           }
         },
         "color": {
-          "field": "Avg_expenditure_per_trip",
+          "field": "Expenditure",
           "type": "quantitative",
-          "title": "Avg. Expenditure per Trip",
+          "title": "Expenditure ($M)",
           "scale": {
-            "scheme": "blues"
+            "scheme": "blues",
+            "domainMin": 0,
+            "zero": false
           }
         },
         "tooltip": [
           {
-            "field": "Region",
+            "field": "Country",
             "type": "nominal",
             "title": "Region"
           },
@@ -147,16 +146,47 @@
             "title": "Trips ('000)"
           },
           {
-            "field": "Avg_expenditure_per_trip",
+            "field": "Visitor_Nights",
             "type": "quantitative",
-            "title": "Avg. Expenditure per Trip"
+            "title": "Visitor Nights ('000)"
           },
           {
-            "field": "Regional_expenditure",
+            "field": "Expenditure",
             "type": "quantitative",
-            "title": "Regional Expenditure ($M)"
+            "title": "Expenditure ($M)"
           }
         ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"Country": "Indonesia", "longitude": 113.9213, "latitude": -0.7893, "annotation": "Most popular place"},
+          {"Country": "USA", "longitude": -95.7129, "latitude": 37.0902, "annotation": "Most expenditure spent"}
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 5,
+        "dy": -5,
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "color": "red"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "longitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "latitude",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "annotation",
+          "type": "nominal"
+        }
       }
     }
   ]

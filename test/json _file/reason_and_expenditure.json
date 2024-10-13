@@ -35,8 +35,8 @@
         {"field": "Trip", "type": "nominal", "title": "Purpose"},
         {"field": "Trip expenditure ($M)(2023)", "type": "quantitative", "title": "Trip Expenditure ($M) 2023", "format": ",.2f"},
         {"field": "Trip expenditure ($M)(2024)", "type": "quantitative", "title": "Trip Expenditure ($M) 2024", "format": ",.2f"},
-        {"field": "% of total", "type": "quantitative", "title": "% of Total", "format": ".1%"},
-        {"field": "% change", "type": "quantitative", "title": "% Change", "format": ".1%"}
+        {"field": "% of total(expenditure)", "type": "quantitative", "title": "% of Total", "format": ".2f"},
+        {"field": "% change(expenditure)", "type": "quantitative", "title": "% Change", "format": ".2f"}
       ]
     },
     "config": {

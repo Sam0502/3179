@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourism and Economy Impact Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            text-align: center;
+            margin: 0;
+            font-size: 1.8em;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .button-container {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .button-container button {
+            margin: 10px;
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .button-container button:hover {
+            background-color: #218838;
+            transform: scale(1.05);
+        }
+
+        .chart-container,
+        .analysis-container {
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            display: none;
+            transition: opacity 0.5s, transform 0.5s;
+        }
+
+        .chart-container.show,
+        .analysis-container.show {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #007bff;
+            color: white;
+            margin-top: 40px;
+        }
+
+        .user-guide {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #e9ecef;
+            border-radius: 8px;
+            font-size: 0.95em;
+        }
+
+        .user-guide p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1><i class="fas fa-chart-line"></i> Tourism and Economy Impact Dashboard</h1>
+    </header>
+
+    <div class="container">
+        <div class="button-container">
+            <button type="button" onclick="showChart('map')">Regional Data in Australia</button>
+            <button type="button" onclick="showChart('reason_and_expenditure')">Trip Purpose vs Expenditure Comparison</button>
+            <button type="button" onclick="showChart('stuff')">Visitor Purchases Overview</button>
+            <button type="button" onclick="showChart('bar_chart_for_expenditure')">Regional Expenditure Bar Chart</button>
+            <button type="button" onclick="showChart('inflation_employment')">Inflation vs Employment Ratio</button>
+            <button type="button" onclick="showChart('Overall_analysis')">Overall Analysis</button>
+        </div>
+
+        <div class="user-guide">
+            <p><b>User Guide:</b></p>
+            <p>1. Click on the buttons above to view different charts and analyses related to tourism and the economy.</p>
+            <p>2. The selected chart will be displayed along with an analysis below.</p>
+        </div>
+
+        <div id="chart" class="chart-container"></div>
+        <div id="analysis" class="analysis-container"></div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Tourism Analysis Dashboard | Created By Hoe Hynn Chan | Created for Insightful Analysis of Australia Tourism</p>
+    </footer>
+
+    <script type="text/javascript">
+        const charts = {
+            map: {
+                spec: 'map.json',
+                analysis: `Overview of Growth in Outbound Travel <br><br>
+                The outbound travel data for Australian residents from 2023 to 2024 reveals substantial growth in international travel across multiple regions. Notably, outbound trips surged by 47.3%, with total overseas visitor nights increasing by 41.3%, and total trip expenditure growing significantly by 65.1%. Key destinations that contributed to this increase include New Zealand, Indonesia, and Japan. Particularly striking was the growth in trips to China, which saw a dramatic rise of 913.2% in trips and over 500% in visitor nights, indicating a substantial recovery in travel activity to China post-pandemic.<br><br>
+                Significant Destination Growth <br>
+                Regions like Italy, Japan, and Other Europe also experienced significant growth in both trips and visitor nights, with Italy showing a 120.1% increase in trips and a 130.4% increase in visitor nights. This trend underscores a renewed interest among Australians in European destinations. Fiji and other Pacific nations also saw growth, particularly in visitor expenditure, with Fiji seeing a 64.4% increase in spending, highlighting it as an increasingly popular short-haul destination. But based on the map, the most popular destination is Indonesia, while the most expenditure spent on is the United States. Even though Indonesia is the most visited country, the inflation and the strong currency of AUD cause the total spending to be lower compared to other countries.<br><br>
+                Increased Spending on Travel <br>
+                Overall, the outbound travel patterns show Australians are not only traveling more but also spending significantly higher amounts per trip. This is particularly evident in destinations like Japan and Italy, where the average expenditure saw substantial increases. Such trends indicate an increased appetite for diverse travel experiences and a willingness to spend on premium trips and accommodations.`
+            },
+            reason_and_expenditure: {
+                spec: 'reason_and_expenditure.json',
+                analysis: `Analysis of Foreign Visitor Expenditure by Purpose (2023-2024)<br><br>
+                The data comparing inbound trips and expenditures for foreign visitors to Australia between March 2023 and March 2024 shows significant growth across all categories.<br><br>
+                <b>Holiday:</b> Trips saw the largest increase, rising by 68.3% to 5.32 million, with expenditure almost doubling to $55.47 billion, indicating a strong recovery in leisure travel post-pandemic.<br><br>
+                <b>Visiting Friends and Relatives (VFR):</b> Trips grew by 17.2%, with spending also increasing by 16.6%, showing steady growth in this category.<br><br>
+                <b>Business:</b> Business travel rose by 44.3%, with spending up 41.8% to $9.79 billion, driven by the return of in-person events.<br><br>
+                <b>Other Purposes:</b> Including education and medical travel, grew by 36%, with spending up 61.5%, indicating a diverse expansion beyond holidays and business.<br><br>
+                Overall, inbound travel to Australia shows strong recovery, led by holiday trips and increased spending, suggesting renewed interest in travel and confidence in the Australian tourism sector.`
+            },
+            stuff: {
+                spec: 'stuff_visitor_buy.json',
+                analysis: `Analysis of Domestic Travel Expenditure (2023-2024)<br><br>
+                Domestic travel expenditure in Australia between June 2023 and June 2024 revealed mixed trends. Domestic airfares increased by 20.5% to $627.5 million, and rental vehicles rose by 35.3%, reflecting greater demand for travel.<br><br>
+                Petrol expenditure decreased by 7.3% to $7.86 billion, while vehicle maintenance/repairs spending dropped by 13.2%. Takeaways and restaurant meals spending remained stable, with a slight increase of 0.8%, and shopping, gifts, and souvenirs spending rose by 0.4%. Gambling expenditure almost doubled, increasing by 94.3%.<br><br>
+                Overall, some categories, like airfares and rental vehicles, grew, while others, such as petrol and vehicle maintenance, declined, indicating changing travel preferences.`
+            },
+            bar_chart_for_expenditure: {
+                spec: 'bar_chart_for_expenditure.json',
+                analysis: `Regional Tourism Insights (2023-2024)<br><br>
+                The tourism data for Australian regions from 2023 to 2024 shows notable growth in major cities like Sydney, Melbourne, and Brisbane, which experienced increased trips, visitor nights, and regional expenditures. Sydney and Melbourne led in both total trips and spending, with significant increases in commercial accommodation expenditures, indicating a shift towards higher-value lodging options.<br><br>
+                Conversely, regions like North Coast NSW and Great Ocean Road saw a decline in trips and spending, highlighting potential areas for improvement in tourist attraction. Darwin and Tropical North Queensland remained high-value tourism destinations with the highest average expenditure per trip and per night, reflecting a focus on premium tourism experiences.`
+            },
+            inflation_employment: {
+                spec: 'inflation_employment.json',
+                analysis: `Inflation Rate vs Employment-to-Population Ratio (2023-2024)<br><br>
+                The chart shows a stable relationship between the inflation rate and the employment-to-population ratio. The "employment-to-population ratio" remains consistently high (60-65%), indicating strong employment throughout the year, while the "inflation rate" fluctuates moderately between 4-10%.<br><br>
+                <b>1. Stable Employment Levels:</b> High employment supports greater disposable income and confidence, contributing to increased spending on "holidays" and "travel expenditures". This aligns with the significant rise in "holiday trips" (68.3%) and expenditure (94.7%) by foreign visitors.<br><br>
+                <b>2. Impact on Domestic Expenditure:</b> Stable employment correlates with increased spending on "domestic airfares" (20.5%) and "rental vehicles" (35.3%). Decreased spending on "petrol" and "vehicle maintenance" suggests cost-saving efforts, likely influenced by inflation.<br><br>
+                <b>3. Moderate Inflation Impact:</b> The inflation rate influenced spending, with declines in "petrol" and "vehicle maintenance" and modest increases in "entertainment" and "takeaways", indicating cautious discretionary spending.<br><br>
+                Overall, stable employment has driven travel spending, while inflation has encouraged careful budgeting in specific areas.<br><br>
+                <b>Reminder:</b> For words that have quotation marks (""), they are the names of categories in the dataset.`
+            },
+            Overall_analysis: {
+                spec: null,
+                analysis: `Overall Analysis of Tourism and Travel Trends (2023-2024)<br><br>
+                The tourism and travel data for Australia from 2023 to 2024 shows notable growth in both outbound and inbound travel, driven by stable employment and evolving consumer behavior. Overall, the trends indicate a strong recovery in travel, with increased spending across multiple sectors.<br><br>
+                <b>Inbound Travel:</b> Foreign visitor data shows a resurgence in holiday trips to Australia, with trips increasing by 68.3% and expenditure nearly doubling. VFR and business travel also grew significantly, reflecting increased confidence in travel post-pandemic.<br><br>
+                <b>Outbound Travel:</b> Outbound travel grew by 47.3%, with a 65.1% rise in spending. Destinations like China, Italy, and Japan saw dramatic increases, driven by an appetite for premium experiences and longer vacations.<br><br>
+                <b>Domestic Travel:</b> Domestic travel showed mixed trends. Domestic airfares and rental vehicle expenditures grew, while spending on petrol and vehicle maintenance decreased, indicating cost-saving measures or a shift toward alternative transport. Spending on takeaways, restaurant meals, and entertainment remained steady, pointing to cautious spending amidst inflation.<br><br>
+                <b>Economic Factors:</b> The stable employment rate supported increased spending on travel, while moderate inflation influenced cautious budgeting in some areas. Cost-saving in transport contrasted with higher spending on leisure, indicating careful consumer budgeting.<br><br>
+                Overall, tourism and travel trends for 2023-2024 illustrate a strong recovery, with Australians investing in holidays and premium experiences, demonstrating growing confidence in travel.`
+            }
+        };
+
+        function showChart(chartId) {
+            const chartContainer = document.getElementById('chart');
+            const analysisContainer = document.getElementById('analysis');
+
+            // Clear previous chart and analysis
+            chartContainer.innerHTML = '';
+            analysisContainer.innerHTML = '';
+
+            // Embed the selected chart
+            if (charts[chartId].spec) {
+                vegaEmbed("#chart", charts[chartId].spec).then(function (result) {
+                    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+                }).catch(console.error);
+            }
+
+            // Display the analysis text
+            analysisContainer.innerHTML = `<p>${charts[chartId].analysis}</p>`;
+
+            // Show the chart and analysis containers with animation
+            chartContainer.classList.add('show');
+            analysisContainer.classList.add('show');
+        }
+    </script>
+</body>
+
+</html>
